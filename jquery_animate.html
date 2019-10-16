@@ -1,0 +1,196 @@
+
+<!-- created by stephencarr.net 2019 -->
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>STEPHENCARR.NET JS ANIMATIONS</title>
+
+</head>
+
+           
+
+           
+
+<style>
+
+            body{
+
+    font-family:arial, verdana;
+
+    color:#000;
+
+    font-size:12px;
+
+   
+
+}
+
+ 
+
+#block {
+
+            border: 1px solid #ff0000;
+
+            font-weight: bold;
+
+            text-align: left;
+
+            padding: 15px;
+
+            display: inline-block;
+
+            position: relative;
+
+            text-transform: uppercase;
+
+           
+
+}
+
+</style>
+
+ 
+
+ 
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+ 
+
+<script>
+
+$(document).ready(function(){  
+
+var movement;
+
+ 
+
+           
+
+ 
+
+$( "#home" ).click(function() {
+
+            $("#block").animate({top: 0, left: 0});
+
+});/////
+
+ 
+
+    $(document).keyup(function (e) {
+
+        var keyCode = e.keyCode || e.which,
+
+        arrow = {left: 37, up: 38, right: 39, down: 40 };
+
+                       
+
+                       
+
+                        movement = $("#move").val();
+
+                        if(!movement){
+
+                        movement = 100;
+
+                        }
+
+                        var p = $("#block");
+
+                        var position = p.position();
+
+                        console.log("TOP: "+position.top, "    LEFT: "+position.left);
+
+ 
+
+                       
+
+                        $("#block span").html("speed: " + movement + "<br>TOP: " +position.top+ "<br>LEFT: "+position.left);
+
+                        $("#where b").html("speed: " + movement + "<br>TOP: " +position.top+ "<br>LEFT: "+position.left);
+
+ 
+
+                        console.log("button pushed.");
+
+ 
+
+        switch (keyCode) {
+
+           
+
+            case arrow.left:
+
+                $('#block').animate({"left": "-="+movement+"px"}, "slow");
+
+            break;
+
+           
+
+            case arrow.right:
+
+                $('#block').animate({"left": "+="+movement+"px"}, "slow");
+
+            break;
+
+                                               
+
+                                               
+
+            case arrow.up:
+
+                $('#block').animate({"top": "-="+movement+"px"}, "slow");
+
+            break;
+
+ 
+
+            case arrow.down:
+
+                $('#block').animate({"top": "+="+movement+"px"}, "slow");
+
+            break;
+
+                                               
+
+                                               
+
+       }
+
+    });
+
+});
+
+</script>
+
+ 
+
+ 
+
+ 
+
+            <h2><center>jquery animate example: <button id="home">come home</button>
+
+<input type="text" id="move" name="move" placeholder="enter integer for movement" /><br>
+
+                        <div id="where" style="font-size: 16px;">where is my box:<br><b></b></div>
+
+</center></h2>
+
+ 
+
+<div id="block"><span></span></div>
+
+
+
+
+<!-- created by stephencarr.net 2019 -->
+
+
+<!-- created by stephencarr.net 2019 -->
+
